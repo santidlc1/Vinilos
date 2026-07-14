@@ -11,8 +11,9 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-// Servir archivos estáticos del frontend desde la carpeta "public"
-app.use(express.static(path.join(__dirname, 'public')));
+
+// Servir archivos estáticos del frontend desde la carpeta "frontend"
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Configuración de la conexión a PostgreSQL (usa variables de entorno para producción)
 const pool = new Pool({

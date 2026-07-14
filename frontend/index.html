@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset ="UTF-8">
-    <meta name="viewport" content="width=device-with, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Colección de Vinilos</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
     <header>
-        <h1>Disco de Papá 🎵</h1>
+        <h1>🎵Vinilos de la Carrera🎵</h1>
         <div class="search-container">
             <input type="text" id="search-input" placeholder="Buscar por artista o disco...">
         </div>
-        <div class="filters">
-            <button class="filter-btn active" data-genre="all">Todos</button>
-            <button class="filter-btn" data-genre="Rock">Rock</button>
-            <button class="filter-btn" data-genre="Heavy Metal">Heavy Metal</button>
-            <button class="filter-btn" data-genre="Jazz">Jazz</button>
+        <div class="filters" id="genres-filter-container">
+            </div>
     </header>
-
     <main class="grid-discos" id="discos-container">
         </main>
-
     <div id="modal-detalle" class="modal hidden">
         <div class="modal-content">
-            <span class="close-btn" id="class-modal">&times;</span>
+            <span class="close-btn" id="close-modal">&times;</span>
             <div id="detalle-disco-body">
                 </div>
         </div>
