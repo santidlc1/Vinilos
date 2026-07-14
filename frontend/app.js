@@ -118,6 +118,7 @@ function renderizarDiscos(discosParaMostrar) {
 
 
 
+
 // 3. Generar botones de filtro basados en los géneros reales de la BD
 
 function generarFiltrosDeGeneros(discos) {
