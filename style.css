@@ -1,0 +1,250 @@
+/* public/style.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    padding: 15px;
+    padding-bottom: 50px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    background-color: #121212;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 100;
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #ffb703;
+    letter-spacing: 0.5px;
+}
+
+/* Buscador */
+.search-container input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #2a2a2a;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-container input:focus {
+    border-color: #ffb703;
+}
+
+/* Carrusel de Filtros */
+.filters-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.filters-wrapper::-webkit-scrollbar {
+    display: none; /* Oculta la barra de scroll molesta en celular */
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 5px;
+}
+
+.filter-btn {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.filter-btn.active {
+    background-color: #ffb703;
+    color: #121212;
+}
+
+/* Grilla de Portadas */
+.grid-discos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: #888;
+}
+
+/* Tarjeta de Disco */
+.card-disco {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.15s ease-out;
+}
+
+.card-disco:active {
+    transform: scale(0.95); /* Feedback al presionar en celular */
+}
+
+.card-disco img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    display: block;
+    background-color: #2a2a2a;
+}
+
+.disco-info {
+    padding: 10px;
+}
+
+.disco-info h3 {
+    font-size: 0.9rem;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 3px;
+}
+
+.disco-info p {
+    font-size: 0.75rem;
+    color: #b3b3b3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Modal Emergente */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Abre el modal desde abajo como en iOS/Android */
+    z-index: 1000;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.modal-content {
+    background-color: #1c1c1e;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px 20px 0 0; /* Bordes redondeados superiores */
+    padding: 24px;
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+    animation: slideUp 0.25s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #8e8e93;
+    cursor: pointer;
+}
+
+/* Ficha del disco interna */
+.detalle-portada {
+    width: 60%;
+    margin: 0 auto 15px auto;
+    display: block;
+    border-radius: 12px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.modal-content h2 {
+    font-size: 1.4rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.modal-content .artista-text {
+    color: #ffb703;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.modal-content .meta-info {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #8e8e93;
+    margin-bottom: 15px;
+}
+
+.ubicacion-badge {
+    background-color: #028090;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: table;
+    margin: 0 auto 20px auto;
+    font-weight: bold;
+}
+
+.canciones-lista {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.canciones-lista li {
+    padding: 12px 0;
+    border-bottom: 1px solid #2c2c2e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.canciones-lista li:last-child {
+    border-bottom: none;
+}

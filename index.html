@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Colección de Vinilos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>🎵Vinilos de la Carrera🎵</h1>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Buscar por artista o disco...">
+        </div>
+        <div class="filters" id="genres-filter-container">
+            </div>
+    </header>
+    <main class="grid-discos" id="discos-container">
+        </main>
+    <div id="modal-detalle" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <div id="detalle-disco-body">
+                </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
