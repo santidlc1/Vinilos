@@ -10,19 +10,52 @@
 <body>
     <header>
         <h1>🎵Vinilos de la Carrera🎵</h1>
+        <div class="auth-panel">
+            <div id="auth-status" class="auth-status">Inicia sesión para administrar</div>
+            <div class="auth-actions">
+                <button id="show-auth-btn" class="secondary-btn">Entrar</button>
+            </div>
+        </div>
         <div class="search-container">
             <input type="text" id="search-input" placeholder="Buscar por artista o disco...">
         </div>
-        <div class="filters" id="genres-filter-container">
-            </div>
+        <div class="filters" id="genres-filter-container"></div>
     </header>
-    <main class="grid-discos" id="discos-container">
-        </main>
+    <main class="grid-discos" id="discos-container"></main>
+
+    <div id="auth-modal" class="modal hidden">
+        <div class="modal-content auth-modal-content">
+            <span class="close-btn" id="close-auth-modal">&times;</span>
+            <h2>Gestión de usuarios</h2>
+            <form id="auth-form" class="auth-form">
+                <input type="text" id="auth-username" placeholder="Usuario" required />
+                <input type="password" id="auth-password" placeholder="Contraseña" required />
+                <div class="auth-buttons">
+                    <button type="submit" class="primary-btn">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="admin-modal" class="modal hidden">
+        <div class="modal-content auth-modal-content">
+            <span class="close-btn" id="close-admin-modal">&times;</span>
+            <h2 id="admin-modal-title">Agregar nuevo vinilo</h2>
+            <p id="admin-editing-label" class="editing-label hidden"></p>
+            <form id="admin-form" class="auth-form">
+                <input type="text" id="admin-title" placeholder="Título" required />
+                <input type="text" id="admin-photo" placeholder="URL de la foto" />
+                <input type="text" id="admin-category" placeholder="Categoría / género" required />
+                <textarea id="admin-songs" placeholder="Una canción por línea: Nombre|duración|lado"></textarea>
+                <button type="submit" class="primary-btn">Guardar vinilo</button>
+            </form>
+        </div>
+    </div>
+
     <div id="modal-detalle" class="modal hidden">
         <div class="modal-content">
             <span class="close-btn" id="close-modal">&times;</span>
-            <div id="detalle-disco-body">
-                </div>
+            <div id="detalle-disco-body"></div>
         </div>
     </div>
 
